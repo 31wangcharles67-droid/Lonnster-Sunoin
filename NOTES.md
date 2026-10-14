@@ -2,7 +2,7 @@
 
 ## How to run it
 
-Open `index.html` in a modern web browser. The game uses Phaser 3 from a CDN, so the browser needs an internet connection the first time it loads. A simple local server also works, for example:
+Open `index.html` in a modern web browser. The game uses Three.js from a CDN, so the browser needs an internet connection the first time it loads. A simple local server also works, for example:
 
 ```text
 python -m http.server
@@ -16,10 +16,11 @@ It is currently a local prototype in this project folder. It is not published on
 
 ## What is done
 
-- One short racing level with a 30-second core loop.
+- One short 3D first-person racing level with a 35-second core loop.
 - Keyboard controls: left/right arrows and space boost.
 - Phone controls: left, right, and boost touch buttons.
-- Colored-shape player car, cones, puddles, and rival cars.
+- Simple colored 3D player car, cones, puddles, and rival cars.
+- Perspective camera, road depth, fog, lighting, and moving center-line dashes.
 - Finish screen with current time, top score, and Play Again.
 - Best time saved in the browser with local storage.
 - All tuning numbers are together in the `CONFIG` object at the top of `game.js`.

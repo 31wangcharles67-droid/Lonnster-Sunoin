@@ -18,7 +18,20 @@
       <section id="game-root" aria-label="Lonnster Sonion racing game"></section>
       <p class="hint">Arrow keys steer · Space boosts · On phone, tap left/right or use the buttons</p>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+    <script>
+      window.THREE_READY = new Promise((resolve, reject) => {
+        const urls = [
+          "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js",
+          "https://cdnjs.cloudflare.com/ajax/libs/three.js/r161/three.min.js"
+        ];
+        const load = index => {
+          if (index >= urls.length) { reject(new Error("Three.js CDN unavailable")); return; }
+          const script = document.createElement("script");
+          script.src = urls[index]; script.onload = resolve; script.onerror = () => load(index + 1); document.head.appendChild(script);
+        };
+        load(0);
+      });
+    </script>
     <script src="game.js"></script>
   </body>
 </html>

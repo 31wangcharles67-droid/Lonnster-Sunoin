@@ -8,6 +8,6 @@ createServer(async (request, response) => {
   const requested = request.url === "/" ? "/index.html" : request.url.split("?")[0];
   const file = normalize(join(root, requested));
   if (!file.startsWith(root)) { response.writeHead(403); response.end("Forbidden"); return; }
-  try { response.writeHead(200, { "Content-Type": types[extname(file)] || "application/octet-stream" }); response.end(await readFile(file)); }
+  try { const contents = await readFile(file); response.writeHead(200, { "Content-Type": types[extname(file)] || "application/octet-stream" }); response.end(contents); }
   catch { response.writeHead(404); response.end("Not found"); }
 }).listen(4177, "127.0.0.1", () => console.log("Lonnster Sonion running at http://127.0.0.1:4177"));

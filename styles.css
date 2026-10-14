@@ -24,8 +24,23 @@ body {
 h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.6rem); line-height: 0.95; letter-spacing: -0.05em; }
 .badge { border: 1px solid #4e5c9a; border-radius: 999px; color: #aebcff; padding: 8px 12px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; white-space: nowrap; }
 
-#game-root { overflow: hidden; border: 2px solid #3d4a80; border-radius: 20px; background: #161c36; box-shadow: 0 20px 60px #070910aa; touch-action: none; }
-#game-root canvas { display: block; width: 100% !important; height: auto !important; }
+#game-root { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border: 2px solid #3d4a80; border-radius: 20px; background: #161c36; box-shadow: 0 20px 60px #070910aa; touch-action: none; }
+#game-root canvas { display: block; width: 100% !important; height: 100% !important; }
+.hud { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.hud-top { display: flex; justify-content: space-between; padding: 18px 22px; font-weight: 800; text-shadow: 0 2px 3px #101426aa; }
+.hud-time { font-size: 1.35rem; }
+.hud-best { color: #ffcb5c; }
+.hud-boost { position: absolute; top: 50px; left: 22px; color: #62e6c9; font-size: 0.85rem; }
+.hud-progress { position: absolute; top: 22px; left: 50%; color: #d7ddff; font-size: 0.8rem; transform: translateX(-50%); }
+.touch-controls { position: absolute; inset: auto 0 13px; display: flex; justify-content: space-between; align-items: center; padding: 0 28px; pointer-events: auto; }
+.touch-controls button { min-width: 112px; padding: 13px 12px; border: 0; border-radius: 12px; background: #485685dd; color: #f7f4ff; font: 800 0.9rem "Trebuchet MS", sans-serif; touch-action: manipulation; }
+.touch-controls .boost-button { background: #ffcb5cee; color: #151b35; min-width: 145px; }
+.overlay { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; background: #10142666; }
+.overlay-card { width: min(570px, calc(100% - 32px)); padding: 34px 24px 28px; border: 2px solid #596bb0; border-radius: 16px; background: #151b35f5; text-align: center; box-shadow: 0 20px 50px #07091088; }
+.overlay h2 { margin: 0 0 18px; color: #62e6c9; font-size: clamp(1.8rem, 6vw, 2.6rem); }
+.overlay p { margin: 0 0 24px; color: #f7f4ff; font-size: 1.15rem; line-height: 1.55; white-space: pre-line; }
+.overlay button { padding: 15px 28px; border: 0; border-radius: 10px; background: #ffcb5c; color: #151b35; font: 800 1rem "Trebuchet MS", sans-serif; cursor: pointer; }
+.overlay .score { margin: 16px 0 0; color: #ffcb5c; font-size: 0.9rem; font-weight: 800; }
 .hint { margin: 12px 0 0; color: #aeb7d7; text-align: center; font-size: 0.9rem; }
 
 @media (max-width: 620px) {
@@ -34,4 +49,7 @@ h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.6rem); line-height: 0.95; letter-s
   .badge { align-self: flex-start; }
   #game-root { border-radius: 14px; }
   .hint { font-size: 0.78rem; }
+  .touch-controls { padding: 0 10px; }
+  .touch-controls button { min-width: 88px; padding: 12px 7px; font-size: 0.76rem; }
+  .touch-controls .boost-button { min-width: 108px; }
 }
