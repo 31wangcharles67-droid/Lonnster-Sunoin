@@ -2,18 +2,18 @@
 const CONFIG = {
   width: 900, // Game canvas width in pixels.
   height: 600, // Game canvas height in pixels.
-  trackWidth: 560, // Width of the drivable road.
-  playerSpeed: 270, // Normal forward speed in pixels per second.
-  boostSpeed: 430, // Forward speed while the boost is held.
-  steerSpeed: 360, // Sideways steering speed in pixels per second.
-  boostSeconds: 1.2, // How long one boost can last.
-  boostRecharge: 2.5, // Seconds needed to recharge the boost.
-  levelSeconds: 30, // Length of the one short level.
-  spawnEvery: 1.35, // Seconds between new obstacles.
-  obstacleSpeed: 130, // Extra downward motion for hazards.
-  collisionSlow: 1.1, // Seconds lost after hitting a hazard.
-  hazardWidth: 54, // Width of cones, puddles, and rival cars.
-  hazardHeight: 54, // Height of cones, puddles, and rival cars.
+  trackWidth: 520, // Width of the drivable road.
+  playerSpeed: 285, // Normal forward speed in pixels per second.
+  boostSpeed: 400, // Forward speed while the boost is held.
+  steerSpeed: 330, // Sideways steering speed in pixels per second.
+  boostSeconds: 0.9, // How long one boost can last.
+  boostRecharge: 3.4, // Seconds needed to recharge the boost.
+  levelSeconds: 35, // Length of the one short level.
+  spawnEvery: 0.95, // Seconds between new obstacles.
+  obstacleSpeed: 170, // Extra downward motion for hazards.
+  collisionSlow: 1.8, // Seconds lost after hitting a hazard.
+  hazardWidth: 60, // Width of cones, puddles, and rival cars.
+  hazardHeight: 60, // Height of cones, puddles, and rival cars.
   roadStripeHeight: 54, // Height of each moving road stripe.
   roadStripeGap: 42, // Gap between moving road stripes.
   topScoreKey: "lonnster-sonion-top-score" // Browser storage key for the best time.
